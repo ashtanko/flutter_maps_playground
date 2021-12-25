@@ -1,0 +1,23 @@
+name: Project CI/CD
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+
+      - name: Install dependencies
+        run: flutter clean && flutter packages get && flutter packages pub run build_runner build --delete-conflicting-outputs
+
+      - name: Runing tests
+        run: flutter test --coverage
