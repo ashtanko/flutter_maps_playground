@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base_template/generated/l10n.dart';
+import 'package:flutter_base_template/ui/screen/home_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'theme/theme.dart';
@@ -26,7 +27,7 @@ class App extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      // home: const HomeScreen(), // TODO
+      home: const HomeScreen(),
       supportedLocales: const [
         Locale('en', ''),
       ],
